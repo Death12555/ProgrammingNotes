@@ -1,0 +1,6 @@
+*.log
+.DS_Store
+/Error_test/
+test_folder/Error_test
+test_folder/
+/Untrack_folder
