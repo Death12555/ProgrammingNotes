@@ -4,28 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "63d56ce2ef243a0c",
+        "id": "c3218a9b6cdba20c",
         "type": "tabs",
         "children": [
           {
-            "id": "c9fb44b6ab9d11c0",
+            "id": "b186e79a76d894f3",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Git.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           },
           {
-            "id": "c6638444c3c4e50a",
+            "id": "28491c2b02f076bc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Git.md",
+                "file": "OOPS-.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Git.md",
+                "file": "OOPS-.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Git.md",
+                "file": "OOPS-.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,11 +134,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Git.md"
+                "file": "OOPS-.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -159,10 +156,22 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c6638444c3c4e50a",
+  "active": "28491c2b02f076bc",
   "lastOpenFiles": [
-    "Title.md",
     "Git.md",
+    "OOPS-.md",
+    "Screenshot 2023-12-06 at 2.01.26 PM.png",
+    "Screenshot 2023-12-06 at 1.02.54 PM.png",
+    "Screenshot 2023-12-05 at 4.15.38 PM.png",
+    "Screenshot 2023-12-05 at 7.10.10 PM.png",
+    "Screenshot 2023-12-05 at 6.55.50 PM.png",
+    "Screenshot 2023-12-05 at 6.54.27 PM.png",
+    "Screenshot 2023-12-05 at 6.41.28 PM.png",
+    "Screenshot 2023-12-05 at 6.13.23 PM.png",
+    "Screenshot 2023-12-05 at 6.12.56 PM.png",
+    "Screenshot 2023-12-05 at 5.10.47 PM.png",
+    "Title.md",
+    "Untitled",
     "www.abhirangisfaggot.com.md",
     "git"
   ]
