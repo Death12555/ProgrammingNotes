@@ -8,27 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b186e79a76d894f3",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "28491c2b02f076bc",
+            "id": "f2dee50815960380",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "OOPS-.md",
+                "file": "Data Structures.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -94,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OOPS-.md",
+                "file": "Data Structures.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OOPS-.md",
+                "file": "Data Structures.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OOPS-.md"
+                "file": "Data Structures.md"
               }
             }
           }
@@ -156,21 +147,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "28491c2b02f076bc",
+  "active": "f2dee50815960380",
   "lastOpenFiles": [
+    "Screenshot 2023-12-07 at 9.01.08 PM (2).png",
+    "Screenshot 2023-12-07 at 9.01.08 PM.png",
+    "Screenshot 2023-12-07 at 8.58.16 PM (2).png",
+    "Screenshot 2023-12-07 at 8.58.16 PM.png",
+    "Screenshot 2023-12-07 at 8.57.35 PM (2).png",
+    "Screenshot 2023-12-07 at 8.57.35 PM.png",
+    "Screenshot 2023-12-07 at 8.49.55 PM (2).png",
+    "Screenshot 2023-12-07 at 8.49.55 PM.png",
+    "Screenshot 2023-12-07 at 8.48.21 PM (2).png",
+    "Screenshot 2023-12-07 at 8.48.21 PM.png",
+    "Screenshot 2023-12-07 at 8.45.32 PM (2).png",
+    "Data Structures.md",
     "Git.md",
-    "OOPS-.md",
-    "Screenshot 2023-12-06 at 2.01.26 PM.png",
-    "Screenshot 2023-12-06 at 1.02.54 PM.png",
-    "Screenshot 2023-12-05 at 4.15.38 PM.png",
-    "Screenshot 2023-12-05 at 7.10.10 PM.png",
-    "Screenshot 2023-12-05 at 6.55.50 PM.png",
-    "Screenshot 2023-12-05 at 6.54.27 PM.png",
-    "Screenshot 2023-12-05 at 6.41.28 PM.png",
-    "Screenshot 2023-12-05 at 6.13.23 PM.png",
-    "Screenshot 2023-12-05 at 6.12.56 PM.png",
-    "Screenshot 2023-12-05 at 5.10.47 PM.png",
     "Title.md",
+    "OOPS-.md",
     "Untitled",
     "www.abhirangisfaggot.com.md",
     "git"
