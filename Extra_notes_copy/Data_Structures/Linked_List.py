@@ -157,6 +157,29 @@ class Linked_List:
             fast= fast.next
 
         return slow
+        
+    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if not head or not head.next:
+            return head
+
+        prev= None
+        curr= head
+
+        while curr and curr.next:
+            temp= curr.next
+            curr.next= temp.next
+            temp.next= curr
+        
+            if prev:
+                prev.next= temp
+            else:
+                head= temp
+
+            prev= curr
+            curr= curr.next
+
+        return head
+
 
 
 if __name__== '__main__':
@@ -179,4 +202,5 @@ if __name__== '__main__':
     ll.print_list()
     ll.reverse_list()
     ll.print_list()
+    ll.swapPairs([1, 2, 3, 4])
     
