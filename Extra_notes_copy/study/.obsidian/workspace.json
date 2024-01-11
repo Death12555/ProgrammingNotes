@@ -44,7 +44,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Git.md",
+                "file": "TODO/TODO.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Git.md",
+                "file": "TODO/TODO.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Git.md"
+                "file": "TODO/TODO.md"
               }
             }
           }
@@ -172,27 +172,28 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ca18add49244a230",
+  "active": "beee1b9d3a24138d",
   "lastOpenFiles": [
-    "Logging.md",
-    "Screenshot 2024-01-02 at 8.41.15 PM.png",
-    "Screenshot 2024-01-02 at 8.28.05 PM.png",
-    "Screenshot 2024-01-02 at 8.17.57 PM.png",
-    "Screenshot 2024-01-02 at 7.54.27 PM.png",
-    "Screenshot 2024-01-02 at 7.35.11 PM.png",
-    "Screenshot 2024-01-02 at 7.31.00 PM.png",
-    "TODO/TODO.md",
-    "Screenshot 2023-12-29 at 8.08.05 PM.png",
-    "Screenshot 2023-12-29 at 8.02.09 PM.png",
-    "Screenshot 2023-12-29 at 3.47.16 PM.png",
-    "Screenshot 2023-12-29 at 2.49.55 PM.png",
+    "Screenshot 2024-01-11 at 7.53.31 AM.png",
+    "Screenshot 2024-01-11 at 7.45.59 AM.png",
+    "Screenshot 2024-01-11 at 7.11.14 AM.png",
+    "Screenshot 2024-01-11 at 6.54.15 AM.png",
+    "Screenshot 2024-01-11 at 6.50.48 AM.png",
+    "Screenshot 2024-01-11 at 6.43.00 AM.png",
+    "Screenshot 2024-01-11 at 6.23.18 AM.png",
+    "Screenshot 2024-01-11 at 6.16.28 AM.png",
+    "Screenshot 2024-01-11 at 6.05.42 AM.png",
+    "Screenshot 2024-01-11 at 5.55.20 AM.png",
+    "Screenshot 2024-01-11 at 5.01.06 AM.png",
     "VS Code Cheatsheet.md",
+    "TODO/TODO.md",
+    "Git.md",
+    "Logging.md",
     "TODO",
     "keyboard-shortcuts-macos.pdf",
     "OOPS-.md",
     "Interview Questions.md",
     "Data Structures.md",
-    "Git.md",
     "Decorators.md",
     "Software to install.md",
     "Time and Space Complexity.md",
