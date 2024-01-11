@@ -10,3 +10,15 @@ def index(request):           #To be put in views.py
         "successful_counter": 3,
     }
     return render(request, 'index.html', {**key1_context, **other_context})
+
+
+path('', views.word_counter, name= 'word_counter'),
+path('count', views.count, name= 'count')
+
+def word_counter(request):
+    return render(request, 'word_counter.html')
+
+def count(request):
+    text= request.POST['text']
+    number_of_words= len(text.split())
+    return render(request, 'count.html', {'number': number_of_words})
