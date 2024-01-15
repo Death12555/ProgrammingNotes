@@ -8,12 +8,24 @@
         "type": "tabs",
         "children": [
           {
-            "id": "f2dee50815960380",
+            "id": "b03914d635ad830f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Data Structures.md",
+                "file": "TODO/TODO.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ca18add49244a230",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Git.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Data Structures.md",
+                "file": "TODO/TODO.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Data Structures.md",
+                "file": "TODO/TODO.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Data Structures.md"
+                "file": "TODO/TODO.md"
               }
             }
           }
@@ -147,24 +159,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f2dee50815960380",
+  "active": "b03914d635ad830f",
   "lastOpenFiles": [
-    "Screenshot 2023-12-07 at 9.01.08 PM (2).png",
-    "Screenshot 2023-12-07 at 9.01.08 PM.png",
-    "Screenshot 2023-12-07 at 8.58.16 PM (2).png",
-    "Screenshot 2023-12-07 at 8.58.16 PM.png",
-    "Screenshot 2023-12-07 at 8.57.35 PM (2).png",
-    "Screenshot 2023-12-07 at 8.57.35 PM.png",
-    "Screenshot 2023-12-07 at 8.49.55 PM (2).png",
-    "Screenshot 2023-12-07 at 8.49.55 PM.png",
-    "Screenshot 2023-12-07 at 8.48.21 PM (2).png",
-    "Screenshot 2023-12-07 at 8.48.21 PM.png",
-    "Screenshot 2023-12-07 at 8.45.32 PM (2).png",
-    "Data Structures.md",
+    "Screenshot 2024-01-15 at 10.47.04 AM.png",
+    "Screenshot 2024-01-15 at 10.46.49 AM.png",
+    "Screenshot 2024-01-15 at 10.44.56 AM.png",
+    "Screenshot 2024-01-15 at 10.44.21 AM.png",
+    "Screenshot 2024-01-15 at 10.43.46 AM.png",
+    "Screenshot 2024-01-15 at 10.43.10 AM.png",
+    "Screenshot 2024-01-15 at 10.42.11 AM.png",
+    "Screenshot 2024-01-15 at 10.40.44 AM.png",
+    "Screenshot 2024-01-15 at 10.39.17 AM.png",
+    "Screenshot 2024-01-15 at 10.37.56 AM.png",
+    "Screenshot 2024-01-15 at 10.35.38 AM.png",
     "Git.md",
-    "Title.md",
+    "TODO/TODO.md",
+    "VS Code Cheatsheet.md",
     "OOPS-.md",
-    "Untitled",
+    "Logging.md",
+    "Data Structures.md",
+    "TODO.md",
+    "Softwares to install.md",
+    "Time and Space Complexity.md",
+    "Title.md",
+    "Decorators.md",
+    "Interview Questions.md",
+    "TODO",
+    "keyboard-shortcuts-macos.pdf",
+    "Software to install.md",
     "www.abhirangisfaggot.com.md",
     "git"
   ]

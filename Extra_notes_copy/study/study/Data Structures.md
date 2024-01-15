@@ -57,3 +57,116 @@ For multiple recursion calls they happen sequentially.
 For this question the time complexity will be O(2^n), where n is exponential in nature, i.e.: the value of the exponent is near n not exactly because here, not every recursive function has 2 calls.
 
 ![[Screenshot 2023-12-07 at 9.01.08 PM (2).png]]
+
+Subsequence:
+	A contiguous/non-contiguous sequence, which follows the order.
+
+	![[Screenshot 2023-12-08 at 3.30.02 PM.png]]
+
+	![[Screenshot 2023-12-08 at 3.38.38 PM.png]]
+	
+	![[Screenshot 2023-12-08 at 3.55.44 PM.png]]
+
+Printing a subsequence whose sum=k:
+	 ![[Screenshot 2023-12-08 at 5.56.12 PM.png]]
+
+	![[Screenshot 2023-12-08 at 5.58.24 PM.png]]
+
+Modifying the code to print only one instance of sum being equal to k instead of all:
+	![[Screenshot 2023-12-08 at 6.18.22 PM.png]]
+	
+	![[Screenshot 2023-12-08 at 6.19.51 PM.png]]
+
+	![[Screenshot 2023-12-08 at 6.35.54 PM.png]]
+
+	![[Screenshot 2023-12-08 at 6.37.45 PM.png]]
+	
+	![[Screenshot 2023-12-08 at 6.38.25 PM.png]]
+
+	![[Screenshot 2023-12-08 at 6.39.21 PM.png]]
+
+	![[Screenshot 2023-12-08 at 6.39.42 PM.png]]
+
+	![[Screenshot 2023-12-08 at 6.40.02 PM.png]]
+
+Finding the number of subsequences whose sum is k:
+	![[Screenshot 2023-12-08 at 6.41.27 PM.png]]
+
+	![[Screenshot 2023-12-08 at 6.42.26 PM.png]]
+
+	![[Screenshot 2023-12-08 at 6.56.39 PM.png]]
+
+Merge Sort:
+	![[Screenshot 2023-12-08 at 7.04.48 PM.png]]
+
+	![[Screenshot 2023-12-08 at 7.11.18 PM.png]]
+
+	![[Screenshot 2023-12-08 at 7.11.52 PM.png]]
+
+	![[Screenshot 2023-12-08 at 7.18.08 PM.png]]
+
+	![[Screenshot 2023-12-08 at 7.18.21 PM.png]]
+
+	![[Screenshot 2023-12-08 at 7.24.05 PM.png]]
+	
+	![[Screenshot 2023-12-08 at 7.24.52 PM.png]]
+
+	![[Screenshot 2023-12-08 at 7.25.33 PM.png]]
+	Time complexity: O(NlogN(base 2))
+	![[Screenshot 2023-12-08 at 8.47.03 PM.png]]![[Screenshot 2023-12-08 at 8.48.09 PM.png]]
+	Space Complexity: O(N)
+	
+	![[Screenshot 2023-12-08 at 8.50.06 PM.png]]
+
+Quick Sort:
+	![[Screenshot 2023-12-08 at 8.57.03 PM.png]]
+	
+	![[Screenshot 2023-12-08 at 9.01.26 PM.png]]
+	
+	![[Screenshot 2023-12-08 at 9.04.57 PM.png]]
+	
+	![[Screenshot 2023-12-08 at 9.06.04 PM.png]]
+	
+	![[Screenshot 2023-12-08 at 9.07.40 PM.png]]
+	Since i and j might go out range make the loops i<=high-1 and j>=low+1 in the while loops
+
+Combination Sum:
+	![[Screenshot 2023-12-11 at 8.37.52 PM.png]]
+	
+
+Combination Sum II:
+	![[Screenshot 2023-12-11 at 9.17.24 PM.png]]
+
+Subset Sum:
+	![[Screenshot 2023-12-14 at 3.53.03 PM.png]]
+	
+	![[Screenshot 2023-12-14 at 3.55.41 PM.png]]
+	
+	![[Screenshot 2023-12-14 at 3.57.55 PM.png]]
+	
+	![[Screenshot 2023-12-14 at 4.40.09 PM.png]]
+	
+Subset Sum II:
+	![[Screenshot 2023-12-14 at 5.44.51 PM.png]]
+	
+	![[Screenshot 2023-12-14 at 6.34.29 PM.png]]
+	O(n) is the auxiliary space complexity here.
+	![[Screenshot 2023-12-14 at 6.38.33 PM.png]]
+	
+
+Permutations:
+	![[Screenshot 2023-12-14 at 11.41.42 PM.png]]
+	
+	![[Screenshot 2023-12-14 at 11.45.06 PM.png]]
+	So ultimately there are 6 permutations(2+2+2) in this example.
+	
+	![[Screenshot 2023-12-14 at 11.48.54 PM.png]]
+	O(n) is auxiliary space complexity.
+
+Approach 2:
+	![[Screenshot 2023-12-15 at 12.34.23 AM.png]]
+	
+	![[Screenshot 2023-12-15 at 12.37.30 AM.png]]
+	O(n) is also the auxiliary space.
+	O(n) for the recursion space and a O(n!) for returning the answer.
+	
