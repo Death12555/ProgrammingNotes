@@ -251,3 +251,53 @@ Static methods are useful when a method doesn't need access to the instance or i
 	![[Screenshot 2023-12-06 at 2.01.26 PM.png]]
 
 	Class is just used to define a new datatype(object).
+
+Constructors:
+	Constructor is a special member function, with same name as the class.
+	It is used to initialise the objects of its class. It is automatically invoked. whenever an object is created. 
+	When we create a constructor it has no return type/return type is not important, as opposed to other member functions whose return type needs to be given.
+	It has the same name as the class in languages like C++.
+
+In Python:
+	Here, __init__() is a special method that is used to create constructors.
+	It is a dunder method.
+	![[Screenshot 2023-12-15 at 6.21.06 PM.png]
+	
+Types of Constructors:
+	1. Default Constructor: The constructor that doesn't accept any parameters are called default constructors.
+	2.  Parameterised Constructor: When the constructor accepts arguments along with itself('self' arguement). These arguments can be used inside the class to assign values to the data members.
+
+Properties/Characteristics:
+	1. It should be declared in the public section of the class.
+	2.  They are invoked whenever the object is created. Whenever the object is created it also runs for it.
+	3.  They do not have return types, therefore they can't return values.
+	4.  It can have default values.
+	5.  We can't refer to their address.
+
+Main in python:
+	The `if __name__ == '__main__':` block in Python is a common idiom used to check whether the Python script is being run as the main program or if it is being imported as a module into another script. It helps to distinguish between the script being used as the main program or being imported as a module in another program.
+
+Here's how it works:
+
+1. When a Python script is executed, the interpreter assigns the special variable `__name__` a value of `'__main__'` if the script is the main program being run.
+
+2. If the script is being imported as a module into another script, then `__name__` is set to the name of the module (not `'__main__'`).
+
+	By using `if __name__ == '__main__':`, you can include code that should only run when the script is executed directly, not when it's imported as a module. This is useful for creating reusable modules where you might have some code for testing or running specific tasks that should only be executed when the script is the main program.
+
+	For example:
+
+```python
+def some_function():
+    print("This function can be reused in other scripts.")
+
+if __name__ == '__main__':
+    # Code inside this block will only run if the script is executed directly
+    print("This will only run when the script is the main program.")
+    some_function()
+```
+
+In the above example, `some_function()` can be imported and used in other scripts without triggering the code inside the `if __name__ == '__main__':` block. The block is mainly for code that you want to run when the script is executed directly.
+
+Python concepts and function cheatsheet:
+	https://www.codewithharry.com/blogpost/python-cheatsheet/
