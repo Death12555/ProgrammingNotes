@@ -265,6 +265,8 @@ Nothing to commit, working tree clean means all files/versions are committed and
 -> git push -d branch_name:
 (used to delete remote branches on GitHub/GitLab/BitBucket etc.)
 
+
+
 Commit:
 
 Capturing versions/snapshots of source codes to save them as different versions to use and for backup.
