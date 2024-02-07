@@ -1,4 +1,4 @@
-- Environment variables pdh lena
+
 
 - Commands:
 	- If virtualenv is being used then always start with "workon 'env_name'".
@@ -856,3 +856,252 @@ Django Real-time chatapp:
 	
 	![[Screenshot 2024-01-15 at 10.47.04 AM.png]]
 	So after having that done, we would just add an error. So if anything happened, if we add an error, we just say an error occurred.
+
+Django REST Framework:
+	The django REST framework is a library which allows us to build APIs in our django project.
+	
+	![[Screenshot 2024-01-16 at 4.11.51 AM (2).png]]
+	
+	![[Screenshot 2024-01-16 at 4.14.08 AM (2) 1.png]]
+	
+	![[Screenshot 2024-01-16 at 4.17.21 AM (2).png]]
+	So for now we're not gonna create a django app. Later we're gonna create one to use serializers and stuff like that. So for now we're gonna stick with our 'drfproj' directory, so thats where we're gonna put our views.py, or anything we're gonna be using.
+	
+	![[Screenshot 2024-01-16 at 4.21.42 AM (2).png]]
+	So in this views.py file thats where we're gonna code, just like a normal project. 
+	
+	![[Screenshot 2024-01-16 at 4.23.26 AM (2).png]]
+	django.shortcuts is the module, like a class/function in the django library, in which we can input some things. 
+	Now we want to use the API view from the REST framework. So the REST framework provides us with an API view class or function, or whatever it is. So with that API view we're gonna be able to be able to access a lot of types of APIs that are available in the djangorestframework. So when we use the API view we can do something like GET request or POST request, and somethings that are being rendered or are being given to us by the REST framework.
+	
+	![[Screenshot 2024-01-16 at 4.45.05 AM (2).png]]
+	This APIView is gonna allow us to create a function like class on it, so that we're able to use everything available in this APIView. But along with this APIView we want to send a response. 
+	Now, for example, let's say someone, another developer tries to access our API, once it sends a request to our API, we'll want to give the developer a response, some sort of results. So let's say user send a get request just to get a list of a query set or something, or a list of data, we want to give the user back a response or that data. So first, to give a response, we're gonna have to import, response from the rest framework: from rest_framework. import.response import Response. So what this is doing is just saying: from rest_framework.response import response.
+	Now that everything is imported, we can now create a class to inherit from this APIView, so that we can get a lot of methods that we can work with.
+	
+	![[Screenshot 2024-01-16 at 4.50.54 AM (2).png]]
+	This TesView is inheriting from this APIView.
+	So now under this class we want to have a GET function, which just gonna be like a GET request to this API. 
+	
+	![[Screenshot 2024-01-16 at 4.53.26 AM (2).png]]
+	So now that we have this function setup what we just want to specify is data. So this is a testview and in this testview we have a GET request.
+	
+	![[Screenshot 2024-01-16 at 4.55.12 AM (2).png]]
+	So we want to have data that we want to send back to the user or just give as a result. For now lets just hard code our data ourself. Later we're gonna use the django model so that this data will be from the database we have or something. For now, lets just have a simple dictionary that we're gonna send back.
+	
+	![[Screenshot 2024-01-16 at 5.00.05 AM (2).png]]
+	So this is the data we want to send back as a response.
+	
+	![[Screenshot 2024-01-16 at 5.01.23 AM (2).png]]
+	So what we just did, was that we used this Response which we imported from rest_framework.response, and then we're returning a response of this particular data. 
+	So what we want to do now is to go set a url for this so that we can actually test this when we run it on our localhost. So now lets come into urls.py.
+	(empty path shows the home url)
+	
+	![[Screenshot 2024-01-16 at 5.06.46 AM (2).png]]
+	So now that we've that TesView imported, we can easily use it in here.
+	
+	![[Screenshot 2024-01-16 at 5.08.22 AM (2).png]]
+	Now, since TestView is class based view, we have to add .asview(). Now the reason why we're adding .as_view() is because the view which we're using in views.py is a class based view.
+	If we're using a function of this view, what we need to do is that we can just say TesView here:
+	
+	![[Screenshot 2024-01-16 at 5.12.10 AM (2).png]]
+	as the view. But since we're using a class based view, we must do this even though its gonna give us an error, and django isn't going to recognise that as a valid view.
+	So now we've all this setup, we've it linking to the home URL using the TesView.as_view(), and we give it a name of 'test'. Now we run a server and test it immediately.
+	But if we do that we aren't gonna see anything, we might even get an error. And the reason why we might get an error is because right here:
+	
+	![[Screenshot 2024-01-16 at 5.20.06 AM (2).png]]
+	what we did was we installed the djangorestframework and immediately we just came to start importing everything in our project.
+	
+	![[Screenshot 2024-01-16 at 5.21.26 AM (2).png]]
+	But before doing this we need to do some second configurations, to be able to use some particular types of libraries, not all. So for this djangorestframework we need to add some things to our settings. Now lets go to settings,py file.
+	
+	![[Screenshot 2024-01-16 at 5.24.14 AM (2).png]]
+	First of all in our INSTALLED_APPS, we need to add where we are, rest_framework, so django can recognise it. Thats all to do with the settings.
+	
+	![[Screenshot 2024-01-16 at 5.26.23 AM (2).png]]
+	Now under the urls.py, we need to add one url in which the rest_framework can be recognised. So first of all we need to import include. After that we can just do path('api-auth', include('rest_framework.urls')(and then we're just gonna include from rest_framework.urls)),.
+	
+	![[Screenshot 2024-01-16 at 5.31.53 AM (2).png]]
+	So now when we run this server, and when we come to home,
+	
+	![[Screenshot 2024-01-16 at 5.33.08 AM (2).png]]
+	it should give us this TesView:
+	
+	![[Screenshot 2024-01-16 at 5.33.49 AM (2).png]]
+	and TesView should just be give get, to just like either sending a GET request. And then we're just gonna give it response of this particular data.
+	
+	![[Screenshot 2024-01-16 at 5.37.59 AM (2).png]]
+	
+	![[Screenshot 2024-01-16 at 5.50.57 AM (2).png]]
+	djangorestframwork comes with this template to showcase out API and basically test all our API. Now here, it is giving us in a dictionary right here, and this exact thing we've written in data. So normally the API gives us a response in json format, but here, it is giving us a response in dictionary format, because those words we actually setup right in our class function. Normally it should be a json format. So as we can see choosing the GET request, and then the http 200 says OK, because its allowing a GET request, because we specified the get function in class function. If we specify the POST function, its gonna show that we're allowing a POST request.
+	So now if we pick the json option from the dropdown menu:
+	
+	![[Screenshot 2024-01-16 at 6.02.39 AM (2).png]]
+	
+	![[Screenshot 2024-01-16 at 6.03.00 AM (2).png]]
+	We're gonna see that it gives us this in json format. So right here, it gives us in a blank json format, no template, nothing just a blank json format, as if we go this url.
+	
+	![[Screenshot 2024-01-16 at 6.05.55 AM (2).png]]
+	But normally in the homepage it shows us this:
+	
+	![[Screenshot 2024-01-16 at 6.06.42 AM (2).png]]
+	
+	![[Screenshot 2024-01-16 at 6.07.29 AM (2).png]]
+	Now if we come back to the REST framework page and scroll down, in installation we see that exactly what it is doing here, is what we've done in our project. 
+	We don't need the optional packages below djangorestframework so we didn't install them for now.
+
+Django REST Framework Serializers:
+	So serializers is a structure, a representation that represents a data, we want to return in json format or accept in a json format. So we can use serializers to transform our django models into json. Lets first create a new app in our django project.
+	
+	![[Screenshot 2024-01-16 at 6.15.23 AM (2).png]]
+	After this we're gonna go into our models.
+	So the serializer is, think about it like a form, like a model form. Once you have model, the way we create a form for model, so we can submit in Django, so we can submit a form, or update or whatever we want to do. Think of that as a serializer. So serializer is just basically the same thing, we have a model, then we have a serializer that we link that model to and then we specify the fields we want to have in that particular serializer and we just have to use it in views. So that was the theoretical part. Now let's dive into practicals.
+	
+	![[Screenshot 2024-01-16 at 6.24.53 AM (2).png]]
+	So this serializers.py is the file in which we're gonna configure our serialization. For now, we're gonna leave it blank. First we gonna create a new model that we're gonna use. So lets go to models.py.
+	
+	![[Screenshot 2024-01-16 at 6.28.40 AM (2).png]]
+	So now, as we know, whenever we create a model file or make changes to an existing one we need to migrate it into our database.
+	But before we do that lets register this in our INSTALLED_APPS.
+	
+	![[Screenshot 2024-01-16 at 6.30.53 AM (2).png]]
+	
+	![[Screenshot 2024-01-16 at 6.32.02 AM (2).png]]
+	Now we go back to serializers.py.
+	So now, we need to import the serializers from the rest_framework.
+	And we also need to import the post model from the models.py file. And after that we can create a serializer for our POST model by specifying only some fields. 
+	
+	![[Screenshot 2024-01-16 at 6.36.17 AM (2).png]]
+	So after we have these 2 things imported we're just gonna create a serializer class for that student.
+	
+	![[Screenshot 2024-01-16 at 6.38.55 AM (2).png]]
+	(fields is a tuple which gets values from the models.py file)
+	So now lets go back to the views.py file.
+	
+	![[Screenshot 2024-01-16 at 6.44.29 AM (2).png]]
+	Now lets create a POST method in our class. So in this TestView class we're gonna create a POST method so that we can receive data just like in a form. So to do this we're just gonna add a function below in our TesView class. 
+	
+	![[Screenshot 2024-01-16 at 6.48.46 AM (2).png]]
+	So when we do something like this, what it means is that we're actually want to use a form or submit a data or something like this.
+	
+	![[Screenshot 2024-01-16 at 6.50.45 AM (2).png]]
+	So this is exactly what we do in a django form, and form is being used as a reference because its very similar to this.
+	
+	![[Screenshot 2024-01-16 at 6.53.23 AM (2).png]]
+	So what we just did first of all we specified the serializer, but our serializer is this student serializer. So normally if one was using a POST, like if we don't wanna submit a form we can just remove this and say serializer= StudentSerializer(remove, data= request.data). But because we want to submit something like a form we have to say data=request.data, it needs to get the data which is being posted into this particular API view.
+	So then we get that. The next line implies that if all the values are correct, just like we want to collect an integer field and we have a character field or text field then that serializer isn't valid. So this is just checking if everything we want, if all the values are correct. And if its valid we'll just save it. And then we just return a response of that particular data which the user saved.
+	But if this doesn't happen we'll just return a response of an error. 
+	
+	![[Screenshot 2024-01-16 at 7.08.08 AM (2).png]]
+	Now lets save this and our server once again.
+	Now to test this API we need Postman.
+	It is an application/software which is used for testing our API.
+	So since our app is in production or our project is in production is on live or something. First to test it locally on our localhost we can use this application.
+	
+	![[Screenshot 2024-01-17 at 5.51.36 AM (2).png]]
+	First of all, we're gonna come in the browser and then copy. So we'll copy the URL, because that's the URL we're gonna be testing anyway. So right here in the textfield in Postman, we're just gonna paste. This is the URL we're gonna be testing. And we want it to be a POST method. So right here, we're gonna go into body. And then we're going to click on form-data. Now we're going to input KEY. So this key is where we want to submit. So let's see, we'll come back into our VS code, we come into our serializer, we can see that the fields required a name, and age. So we know that in our models name is a character field and age is an integer field. So to avoid any error, we need to make sure that we abide by everything. So name, does give us the value of admin. And then key, that is the age range, just give it a value of 25. Now, if we hit Send, sending the request how postman works, it's gonna test the API for us. Now as we can see, it gives us a response of this particular data name, admin, age 25. But how do we know that this particular data has been submitted into model? So what wants to know is, is this data is really saved in our database, for us to be able to do this, we need to check, we need to open up our admin interface, and set up our admin panel and then check our database.
+	
+	![[Screenshot 2024-01-17 at 6.03.03 AM (2).png]]
+	
+	![[Screenshot 2024-01-17 at 7.11.28 AM (2).png]]
+	from .models import student, and then we want to register that student in our admin interface. So admin.site.register(Student).
+	Let's go to slash admin.
+	So now we can see that under DRF app, we have students, if we click on me, we should have one object in there. So as we can see, we have one student, which is admin. And we submitted that from our API. We didn't create this from our admin panel, or from our project or from our website.
+	
+	![[Screenshot 2024-01-17 at 7.20.11 AM (2).png]]
+	Its through our API. Now the reason why it gives us this is because if we come back here in our code, we'll see that we wrote that, if it's valid, it should save that data. And if it wants to save that data, it should give us a response of serializer.data.
+	
+	![[Screenshot 2024-01-17 at 7.23.45 AM (2).png]]
+	So that means if that is successful, the response we want to get is the data which was submitted. So if we come back to postman, anytime we get the data that we submitted here, it means that was successful.
+	
+	![[Screenshot 2024-01-17 at 7.26.43 AM (2).png]]
+	So thats how to submit from our API. Now lets talk about serializing the data that is going out. (here it means using the get method). So first of all, we already our model registered, and have created a superuser. Now to use a GET method, we're gonna come back to our views code. Now in our get method here:
+	
+	![[Screenshot 2024-01-17 at 7.32.56 AM (2).png]]
+	What we did earlier, its just a blank data, just a normal dictionary, but in this post method, in this post function, we are using serialization, we're serializing our data. So lets say we also want to serialize the data in this get function. Now what we're gonna do, since we already have self request, argument and keyword argument, we're gonna specify a query set.
+	
+	![[Screenshot 2024-01-17 at 7.37.41 AM (2).png]]
+	Now the reason we need to specify many= True, is because this queryset(qs) is a list of objects. So from this Student model we're getting all the objects(all the data in the Students database). So as we can see, its more than one.
+	
+	![[Screenshot 2024-01-17 at 7.41.05 AM (2).png]]
+	It is gonna be a list. Thats why we've to specify many=True. So after specifying query set in a variable(qs), we have another variable named serializerwhich is taken from the StudentSerializer, and we pass in the query set, and then we have tell that many=True. 
+	
+	![[Screenshot 2024-01-17 at 7.45.37 AM (2).png]]
+	Now if it was just one one data we can just put query set(qs) in StudentSerializer. But since its more than one we have to put many= True. So now that we have that we can just return a response of serializer.data.
+	
+	![[Screenshot 2024-01-17 at 7.48.02 AM (2).png]]
+	So when a user tries to access this API using the get method. Its just gonna return a response of this serializer.data.
+	
+	![[Screenshot 2024-01-17 at 7.50.05 AM (2).png]]
+	And this serializer is a list of the objects in this Student model, which is basically data in that site.
+	
+	![[Screenshot 2024-01-17 at 7.57.22 AM (2).png]]
+	Now coming back to Postman, if we remove the fields from form-data, and use none instead and use GET this we'll see that its giving us a preset a list of the data we have in our project. So its giving us in a JSON format. 
+	Now if you don't see this, this particular square bracket, then that is just a dictionary. But since we see the square bracket, and curly braces, which is not taking each of the data, now we know that it's returning it in a JSON format, which is the normal standard way of returning API response or request. So that is what we can do when we're talking about get serializing our gets request.
+	Now lets say we want only one data, so first of all since we have this query set(qs) which is all the objects, and we know that all the objects is more than one, so lets use a variable(student1) which should be = qs.first(). Now what this qs.first() does is that its going to get the first object in this Student model. So next in serializer we remove many=True and now we're not passing the whole query set we're just passing the first student, which is student1.  So now we can just return a response of serializer.data.
+	
+	![[Screenshot 2024-01-17 at 8.10.41 AM (2).png]]
+	
+	![[Screenshot 2024-01-17 at 8.12.05 AM (2).png]]
+
+Authentication in djangorestframework:
+	This authentication is going to allow us to prtect our API endpoint. So we might have some API that we might just allow anybody to use without authenticating or without authorising that user. But we also might have some APIs for which we want the user to, first of all be authenticated. We want the user to have an API key or token or something before they can access that particular API. 
+	Just for example, when we use the YouTube Data API, we need to provide that API key which we get from our Google Cloud account or something like that. So that API key is going to be used to authorize us or to athenticate us to be able to use the API.
+	
+	![[Screenshot 2024-01-17 at 8.22.37 AM (2).png]]
+	
+	![[Screenshot 2024-01-17 at 8.23.09 AM (2).png]]
+	
+	![[Screenshot 2024-01-17 at 8.22.08 AM (2).png]]
+	AllowAny allows anybody to access this particular API, IsAdminUser means the person has to be an admin user before they can access the API. isAuthenticated is the one we're gonna talk aboout. Here the user has to be authenticated into this application before we can give the user can be given the chance/way/something to be able to use our API.
+	So before any of the functions, let's just add a variable named permission_classes. Now this permission classes is going to give us the permissions we want to collect before a user can access any of these.
+	
+	![[Screenshot 2024-01-17 at 8.31.49 AM (2).png]]
+	Now if we want to allow anybody, we can also leave it just like this in the above picture.
+	This means that anybody can access it. Or we can just remove the variable altogether.
+	
+	![[Screenshot 2024-01-17 at 8.33.59 AM (2).png]]
+	So what this here means is that user needs to authenticated before they can use it.
+	
+	![[Screenshot 2024-01-17 at 8.35.38 AM (2).png]]
+	So now as we can see it requires us to be authenticated. or to provide some authentication token or something, before it can give us access to our APIs.
+	
+	![[Screenshot 2024-01-17 at 8.37.56 AM (2).png]]
+	
+	![[Screenshot 2024-01-17 at 8.38.38 AM (2).png]]
+	
+	![[Screenshot 2024-01-17 at 8.39.08 AM (2).png]]
+	So this is going to migrate our rest_framework.authtoken into our database.
+	Now lets flush all the data we have in our database, So we can create a token for each user.
+	
+	![[Screenshot 2024-01-17 at 8.41.40 AM (2).png]]
+	So this is gonna flush all the data we have in our database, just click yes, and then done.
+	So now we don't have any user.
+	
+	![[Screenshot 2024-01-17 at 8.43.33 AM (2).png]]
+	Now we create a super user again and run the server again.
+	
+	![[Screenshot 2024-01-17 at 8.44.22 AM (2).png]]
+	
+	![[Screenshot 2024-01-17 at 8.44.56 AM (2).png]]
+	So now we see that we have an AUTH_TOKEN app and in that we have a Tokens model.
+	
+	![[Screenshot 2024-01-17 at 8.46.49 AM (2).png]]
+	So this is gonna create a token for whatever user we're passing.
+	
+	![[Screenshot 2024-01-17 at 8.48.03 AM (2).png]]
+	It gives a token, and its also gonna save it in the host(token?).
+	
+	![[Screenshot 2024-01-17 at 8.49.59 AM (2).png]]
+	So now lets see how to use this token in Postman to authenticate.
+	
+	![[Screenshot 2024-01-17 at 8.51.29 AM (2).png]]
+	Authorization should be the default Key.
+	
+	![[Screenshot 2024-01-17 at 8.54.08 AM (2).png]]
+	To automate the whole process. So that we don't have to do it for every user.
+	The views from rest_framework.authtoken.views is a default built-in views which allows us to just send the user's credentials and then it obtains the authentication token for us.
+	
+	![[Screenshot 2024-01-17 at 8.57.57 AM (2).png]]
+	So that is how we can do that, we also access this from our code, we can do something like sending a request to this particular page, and then getting the authentication token.
+	

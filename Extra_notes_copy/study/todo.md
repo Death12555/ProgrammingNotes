@@ -1,0 +1,3 @@
+- Basics of RDBMS theory.
+- https://www.w3schools.com/sql/
+- normalization
