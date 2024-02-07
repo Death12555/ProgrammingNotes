@@ -8,19 +8,43 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b03914d635ad830f",
+            "id": "0735d7a32d34b505",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TODO/TODO.md",
+                "file": "Django/Building a Backend REST API with Python & Django.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "ca18add49244a230",
+            "id": "b7f8a1142a7984fd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Building a Backend REST API with Python and Django- Advanced.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "62ce42c28cd21fe1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "VS Code Cheatsheet.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6e02b10ff4103d93",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -31,7 +55,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -97,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TODO/TODO.md",
+                "file": "Git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TODO/TODO.md",
+                "file": "Git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TODO/TODO.md"
+                "file": "Git.md"
               }
             }
           }
@@ -159,32 +184,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b03914d635ad830f",
+  "active": "de3734cb467de45e",
   "lastOpenFiles": [
-    "Screenshot 2024-01-15 at 10.47.04 AM.png",
-    "Screenshot 2024-01-15 at 10.46.49 AM.png",
-    "Screenshot 2024-01-15 at 10.44.56 AM.png",
-    "Screenshot 2024-01-15 at 10.44.21 AM.png",
-    "Screenshot 2024-01-15 at 10.43.46 AM.png",
-    "Screenshot 2024-01-15 at 10.43.10 AM.png",
-    "Screenshot 2024-01-15 at 10.42.11 AM.png",
-    "Screenshot 2024-01-15 at 10.40.44 AM.png",
-    "Screenshot 2024-01-15 at 10.39.17 AM.png",
-    "Screenshot 2024-01-15 at 10.37.56 AM.png",
-    "Screenshot 2024-01-15 at 10.35.38 AM.png",
-    "Git.md",
-    "TODO/TODO.md",
+    "Django/Django_Youtube_Tutorial.md",
+    "Resume building.md",
+    "Django/Building a Backend REST API with Python & Django.md",
+    "Building a Backend REST API with Python and Django- Advanced.md",
+    "Screenshot 2024-02-05 at 6.52.35 PM.png",
+    "Screenshot 2024-02-05 at 6.52.07 PM.png",
+    "Screenshot 2024-02-05 at 6.51.24 PM.png",
+    "Screenshot 2024-02-05 at 6.50.35 PM.png",
+    "Screenshot 2024-02-05 at 6.50.13 PM.png",
+    "Screenshot 2024-02-05 at 6.49.44 PM.png",
+    "Screenshot 2024-02-05 at 6.49.28 PM.png",
+    "Screenshot 2024-02-05 at 6.45.44 PM.png",
+    "Screenshot 2024-02-05 at 6.45.27 PM.png",
+    "Screenshot 2024-02-05 at 6.44.52 PM.png",
     "VS Code Cheatsheet.md",
+    "Git.md",
+    "Decorators.md",
+    "TODO.md",
     "OOPS-.md",
     "Logging.md",
     "Data Structures.md",
-    "TODO.md",
     "Softwares to install.md",
     "Time and Space Complexity.md",
     "Title.md",
-    "Decorators.md",
     "Interview Questions.md",
-    "TODO",
+    "Django",
     "keyboard-shortcuts-macos.pdf",
     "Software to install.md",
     "www.abhirangisfaggot.com.md",
