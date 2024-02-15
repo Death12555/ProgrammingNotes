@@ -392,4 +392,152 @@ Test Driven Development with Django:
 		- TestCase(most common class that we'll be using):
 			- Database integration.
 			- Useful for testing code that uses database(it's useful we need to test code that needs to write or read data to our database).
+		Writing Tests:
+		- Import test class.
+			- SimpleTestCase- No database
+			- TestCase- Database
+			In this particular example, we don't need database integration, so we're going to use a simple test case.
+		- Import objects to test.
+			Next import the actual code that we want to test. So this could be a module or it could be a specific function or a specific class, whatever it is that we want to test. In our test case, we need to import it at the top of the test module.
+		- Define your test class.
+			So here we have a test class called views tests, and we're basing it from the simple test case. It's very important that we base it from either the simple test case or the test case base class, because this is how it's picked up by the Django test run.
+		- Add test method.
+			Each test that we want to add to our class needs to be added as a separate method. And these methods will all be run by the test run when we run our test suite. It's important to make sure that we prefix the name of these methods by test if we want them to be picked up by the test runner.
+		- Setup inputs.
+			So here we have an example test_make_list_unique. So this is going to test the piece of code that takes a list and makes the values unique. So what we're doing here is we're first setting up the inputs. So this is the setup phase of the test. And this is when we create any variables or data that we need in order to test the actual piece of code. So here we're just creating a simple list with some duplicate items that we can test, gets made into a list of unique items after we run the test code.
+		- Execute code to be tested.
+			So here we're calling the remove duplicate function that we want to actually test in this test case. We're going to assign the response of out to res short for response or result. And we can call this variable whatever we want.
+		- Check output.
+			Then we have the assertions. So this is what checks that the code did, what it was expected to do. So in this particular case, we're checking that the response is equal to the list of unique items that we define. So in the inputs, we had sample items which had duplicates for one, two and five. And we just want to make sure that the list that was returned is just one, two, three, four, five. So there's no duplicates in the list. So if this equals true, then the test will pass. However, if the response is not equal to this, list then the test will fail. And we'll get some information on the screen about what was different.
+		Run tests:
+		So we can do it using the Django CLI. The first thing we do is type python manage.py test and then we enter and this will go ahead and run the test suite.
+		So we can see here that we have run two tests and they all passed and we got the response.
+	Write a test:
+		
+		![[Screenshot 2024-02-08 at 11.58.11 AM.png]]
+		
+		![[Screenshot 2024-02-08 at 12.02.02 PM.png]]
+		
+		![[Screenshot 2024-02-08 at 12.02.26 PM.png]]
+		
+		![[Screenshot 2024-02-08 at 12.02.56 PM.png]]
+		
+		![[Screenshot 2024-02-08 at 12.03.12 PM.png]]
+	Write a test using TDD:
+		
+		![[Screenshot 2024-02-08 at 7.12.38 PM.png]]
+		
+		![[Screenshot 2024-02-08 at 7.13.14 PM.png]]
+		
+		![[Screenshot 2024-02-08 at 7.15.03 PM.png]]
+		
+		![[Screenshot 2024-02-08 at 7.15.20 PM.png]]
+		
+		![[Screenshot 2024-02-08 at 7.15.44 PM.png]]
+		
+		![[Screenshot 2024-02-08 at 7.16.09 PM.png]]
+	Mocking:
+		What is Mocking?:
+		- Override or change the behaviour of dependencies(for the purpose of our test).
+		- Avoid unintended side effects/consequences(when we're running our test code).
+		- Isolate code being tested(by our test case, making our test more reliable and accurate).
+		Why use Mocking?:
+		- Avoid relying on external services(when we're running our test cases).
+			Reasons:
+			- Can't guarantee they will be available(when we run your unit tests, which makes our tests fragile).
+			- This makes tests unpredictable and inconsistent(because we're relying on that service being available when we run our test).
+			- However, we might not necessarily have control over that external service, so we can't guarantee that it will be online for our test case.
+		- Avoid unintended consequences(of running our test code).
+			For example:
+			- Accidentally sending emails(every time we run our test case).
+			- If we were to send an email, then this might overload external services(If we start sending thousands of emails for every single time that we run our test case and we just want to avoid that happening so wecan use blocking to avoid that).
+		Example:
+		Imagine we have some code that registers a user and then that registered user function will create the user in the database, and then it will send an email to the user saying Welcome. So they get some kind of email when they register to the service. Now, if we wanted to test this code, you want to avoid actually sending an email to the user. So the way we would do that is we would mock the send_welcome_email() function, and this would prevent the email from actually being sent while allowing us to ensure that the send welcome email was correctly called as per our expected situation. So in this case, what the mocking allows us to do is it stops the real behavior, which is sending the email and just allows us to check that we called the send welcome email function correctly.
+		- register_user()->create_in_db()->send_welcome_email(mock)-> M
+		- Prevent email being sent.
+		- Ensure send_welcome_email() called correctly.
+		Another Benefit:
+		- Speed up tests.
+		- check_db()->sleep()(mock)
+		      ^                    I
+		       I----------I
+		Imagine we have a piece of code that checks if the database is available and then sleeps for a set period of time. So sleep basically just means wait and do nothing and then check that the database is available again. So we would do this if we were creating a piece of code that waited for the database to be online, or it could be any external service to be online. And if it wasn't online, it waited a bit longer and then checks again and eventually it does become online so we continue and we're going to actually have a real example of this inside this project. So what we might do in this situation is if we need to test the check_db() functionality, we don't necessarily want to have our tests waiting the real amount of time that's set in the sleep function.
+		So let's say it waits for 5 seconds between every check. Well, we don't want to slow down our test suite by 5 seconds. So what we can actually do is we can replace the sleep function with a mock object that prevents it actually being cooled. So we don't actually sleep and it just passes instantly. And this allows us to test the checke_db functionality without slowing down our test case by waiting every single time we want to check it.
+		How to mock Code?:
+		- Use unittest.mock
+			- MagicMock/Mock - Replace real objects
+			- Override - Overrides code for tests
+		We can use the unittest.mock library. So this comes built in with Python and it has a number of tools that allow us to mock the code that we are testing. 
+		One of those is the magic mock or the mock class, and this is a class that can be used to replace real objects inside our code. And when we replace it with a mock object, it gives us certain functionality, like the ability to check whether that object was called correctly and what arguments it was called with.
+		The other tool is called Patch, and patch is the bit that allows us to actually replace certain bits of behaviour in the code.
+	Test web requests:
+		Django REST Framework APIClient:
+		- Based on Django's test client.
+		- Make requests.
+		- Check result.
+		- Override authentication.
+		When we're testing APIs like the ones that we'll be creating, it's useful to be able to make actual requests to those API endpoints and then to check the result is what we expect. The Django rest framework gives us the API client, which is based on top of the Django test client that allows us to make web requests. We can actually make real requests to our code and then we can check the result and we can also override any authentication that we might have on that API. So we can just test the behavior of the API, assuming that we're already authenticated.
+		This really helps simplify the test because it means we don't have to manually handle registration and authentication every time we run a test.
+		Using the APIClient works like this:
+		- Import APIClient.
+		- Create Client.
+		- Make request.
+		- Check result.
+		So here's an example of some code.
+		In this code we start by importing the API client from rest framework.test. So this is the client class. Then inside our test we just have a simple test here called test_get_greetings which test an API that returns a list of greetings. Here we define the api client by doing client= APIClient() and this will create a new instance of a client that we can use in our test. Then we can call different HTTP methods on our client and pass in the end point URL that we want to test in this case is just /greetings/. And that's the end point that we're testing. So this code that is highlighted here will make a HTTP request to our greetings endpoint. Then we can check the result using assertions. So the response object that's returned from the client gives us various different things. One of them is the ability to check the status code, its the HTTP response code that we expected to receive from that API. And the other is we can actually check the real data that was written by the API as a Python dictionary or list, so a native python object. So here what we're doing is we're checking the status code was 200, which is the HTTP Okay Status code. And then we're checking that the data resulted in the list of greetings that we expected to see. 
+		
+		![[Screenshot 2024-02-09 at 6.01.43 PM.png]]
+	Common Testing Problems:
+		The first issue is that tests are not running as we expect. We might run our tests after we've added some test to our code and it says that we've run zero tests in 0 seconds. Or maybe it just says that we've run less tests than we've actually defined in our code. So we might have written, let's say, ten tests in our project, and we run them and notice that it only actually says it ran five tests. So this leaves us confused, wondering why did it not pick up the tests that we added? This can be quite confusing issue because it doesn't actually show us any errors. It just doesn't run as we expect. And this leaves us wondering why the tests weren't being picked up by the test runner properly.
+		One possible reason for this issue is that we're missing the __init__.py file inside our test directory. So when we group our test into a directory we want to make sure we have the __init__.py file there. Otherwise this directory doesn't get picked up as a python module. And the test runner might not detect the tests that we've added to this directory.
+		Another possible reason is the indentation of our test cases. So with python, indentation is really important because that's how it separates different bits of code from other bits of code. So a common issue that is we have a test class. Here we have test make_list_unique. And underneath that we have test_something_else. And we might notice that test_something_else is actually indented underneath the method defined above. So what this means is that this function or this method becomes part of the test_make_list_unique method that we defined above. And this means that the test runner won't pick it up automatically. So we want to make sure when we're defining our tests that they're all indented correctly inside our test class. This way we can ensure that all of our tests get picked up correctly.
+		Another reason is that we're missing the test prefix for our method or module names. So, for example, if we have a test class with two different tests, here we have one that says, check_some_function and this won't get picked out because it doesn't start with test. The test runner only looks for methods that start with the test keyword. The reason for this is so that we can add functionality and methods to our classes but don't get picked up directly by the test runner. But maybe they're just used as helper functions or helper methods for our other tests inside the test class. We can see we have test_some_functionality that does start with test and this would be picked up by the test runner. So if we would run this piece of code, we would see that only one test was run.
+		Another common issue that people have is they see an input error when they're running their tests. It says that the test module incorrectly imported from and then a path is this module globally installed. Now this can be confusing because we are just running tests and then we see this import error which doesn't really reference anything to do with our tests. The reason for this error is usually because we have both the tests directory and the test API module in our app.
+		And here's an example of that.
+		Here we have the tests directory where we want to split our tests up into different modules and then below we also have the test module. And the issue here is that Python is confused as to which module we're trying to import by the test run. So this creates issues in our code. we always want to make sure that we use either the test directory or the test module, but we don't have both.
+
+Configure Database:
+	Database architecture overview:
+		PostgreSql:
+		- Popular open source DB
+		- Integrates well with Django
+		Docker Compose:
+		- Defined with project(reusable code)
+		- Persistent data using volumes
+		- Handles network configuration
+		- Environment variable configuration
+		We're going to be using Docker Compose to configure our database for our project. This will allow us to define the database configuration inside our actual project source code, which means it's reusable for other developers who might be working on the project. Or if we want to shift from one machine to another and it's also reusable for our deployment environment using Docker Compose also allows us to have persistent volumes. This means that on our local development database we can persist the data until we deliberately want to clear it, which is useful when we're working, because it means that we don't have to recreate the sample and test data every single time we want to test something on our local machine. Also, Docker Compose handles the network configuration so we don't need to worry about ports being opened and things like that. We can handle all of that using Docker Compose and we can define it in the configuration in our project. Finally, we have the environment variable configuration. This also is a feature of Docker Compose and this allows us to configure our settings inside the project using environment variables.
+		So how is this going to look for our project?
+		Well, we're going to have Docker compose and Docker Compose is going to have 2 different services, the database service and the app service. So the database is going to run the Postgres application and the app is going to run our Django application. These two services are going to be able to communicate with each other so that the Django app can access and read and write data on the Postgres database.
+				Docker Compose
+			Database<------------>App
+			(PostgreSQL)                  (Django)
+		Network Connectivity:
+		services:
+			app:
+				depends_on:
+					- db
+			db:
+			image: postgres:13-alpine
+		- Set depnds_on on app service to start db first.
+		- Docker compose creates a network.
+		- The app service can use db hostname.
+		So how do we set up network connectivity?
+		Well, this is handled automatically by Docker Compose. What we're going to do is first set the depends_on which is a setting in Docker compose and this just allows us to ensure that one service starts before another. So this particular depends_on configuration will ensure that the database service starts before the app service starts. Now there are some issues that we're going to have to work out later on because just because the service starts it doesn't mean the database is actually ready. Docker Compose will then create a network automatically between the different services. So in this case we have a network set up in the background between the App Service and the DB service. This means that the App Service can use DB as the hostname for the database and it will be able to connect to the service running in the DB service. So we basically use the name of the service as the hostname that we want to connect to and this will all make sense as we can figure out database later on.
+		Volumes:
+		- Persistent data
+		- Maps directory in container in container to local machine.
+		services:
+			app:
+				depends_on:
+					- db
+			db:
+			image: postgres:13-alpine
+			volumes:
+				- dev-db-data:/var/library/postgresql/data
+			volumes:
+			dev-db-data:
+			dev-static-data:
+		Volumes is how we store persistent data using Docker Compose. So this will allow us to map a directory inside the container to a directory on our local machine and then we can choose when we want to clear the data in that directory. So basically it means regardless of how many times we start and stop our services, we can still have some persistent data there that is reused every time we start the service until we deliberately clear it. The way we use volumes is, we're going to be setting up what's called a name volume, and that means we're going to define a volume in a volumes block underneath the or at the bottom of the Docker compose configuration. Then we'll use that name to basically map a directory inside the running container to the named volume on our machine. And this file system and everything is handled automatically by Docker Compose, we're going to be mapping the volume to the location in the container that contains the data for the database. So any data that's created in the database is actually stored in the file system. And we're going to store that system location so that the directory where those files are stored, we're going to store them in our volume. If we look at the official documentation for PostgreSQL or the Docker Hub page for the Postgres Docker container, then it will tell us that this is the location.
+		Add a database service:
 		
